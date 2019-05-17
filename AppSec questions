@@ -1,0 +1,404 @@
+What is CSRF and XSS? 
+XSS enables attackers to inject client-side script into Web pages viewed by other users
+CSRF flaw occurs hen app does not validate request origin. 
+
+How do you detect CSRF in an application?
+We can detect CSRF by finding out if it uses some unique string for each user. 
+We can implement some challenge tokens or CSRF tokens by which each request and response can be identified in a user session. 
+
+What are the pre-requisites for CSRF?
+The site that the user trusts must be logged in and the malicious site has a script that can be executed.
+
+What is session hijacking and session transformation?
+The Session Hijacking attack compromises the session token by stealing or predicting a valid session token to gain unauthorized access to the Web Server.
+A way to avoid replay attacks is by using session tokens by which having an unique session token for each authentication request.
+
+How will make the application secure from CSRF?
+By implementing CSRF tokens or challenge tokens unique to each user per session. 
+
+I have 2 pages, and I use POST method, Then how will I Do CSRF?
+CSRF tokens can be modified or stolen 
+
+How will you check for SQl Injection?
+Blind Injection, Error Reporting, Tautology based detection
+
+If I put 1=1 what will happen?
+The condition always results in being TRUE and therefore what condition do we preced the tautology with will get executed.  
+
+What are the various cleartext protocols
+FTP , TELNET, SMTP, HTTP, 
+Aware about Wireshark
+Packet sniffing tool 
+
+ow will you sniff password?
+Cain & Abel
+
+What is a firewall?
+
+A S/W or H/W device that can be used to control incoming and outgoing network traffic
+WAF firewall?
+A web application firewall (WAF) is an appliance, server plugin, or filter that applies a set of rules to an HTTP conversation. eg: modsecurity 
+
+Sql injection tools
+Sqlmap 
+
+How will you secure an application? 
+Physical, infrastructure, application security
+Input Validation, Output Sanitization, Error Reporting
+
+What are the firewalls available?
+Stateful and Stateless firewalls.
+Packet filtering, application/ Reverse Proxy FW
+
+How will you do firewall PT
+Check the way in which the analysis is done and also encoding packets and sending it. 
+
+What tools are available?
+Firewalk
+Network VAPT how will you identify packets?
+wireshark
+
+What are the five security measures, that you will take for web application, web server, physical server?
+Tool to do network analysis:
+ Nmap, SuperScan
+
+How to take down an unpatched computer- 
+metasploit
+
+How to protect against XSS-
+Input Validation, Output Encoding 
+
+Web app authentication breach techniques- 
+Brute Force, Rainbow Table, Dictionary Attacks 
+
+How to scan web Apps : 
+Zap, AppScan 
+
+Different types of Security measures that you would take- 
+Physical Security, Infrastructure Security, Network Security, Application Security 
+
+How will you test for CSRF
+intercept request and check if unique identifier is present. 
+
+Owasp top 10 listing
+CSRF
+Unvalidated redirects and forwards
+Injection
+Broken authentication and session management 
+Security misconfiguration
+Sensitive data exposure 
+
+HTTP Request Response Mechanism?
+Explain about HTTP GET,POST and then go to N/W layer(TCP, UDP) and explain about 3-way handshake. 
+Cookies?
+How cookies should be generated, cookie attributes like domain, secure, httpOnly. 
+HTTP & HTTPS:
+They use SSl/TLS for transmission.
+HTTP ERROR CODES?
+Informational 1xx- 
+100 – Continue
+101- Switching Protocols. 
+Successful 2xx
+203- Local copy is displayed. 
+Redirection 3xx
+Client Error 4xx
+Server Error 5xx
+
+Encryption?
+Symmetric vs Asymmetric 
+Web of trust vs chain of trust 
+RSA, public/Private, AES, DES,
+
+Message Hashing? 
+Integrity and fixed size output. 
+
+Call by Value and Call by Reference?
+C- pointers are available and therefore both can be done. 
+Java- no pointers available so no call by reference. 
+
+Array mutability in C?
+C- Array is immutable
+Java – Array is mutable
+
+UDP and TCP
+3 way handshake for TCP
+
+Network Segmentation and network Isolation
+Segmentation involves dividing the network by logical connections
+Network Isolation involves separate Cabling, Infrastructure and it is completely isolated. 
+
+IPS and IDS
+IPS- Intrusion Prevention System- Detect and as well as Prevent any kind of suspicious packet. 
+IDS- Intrusion Detection System- Only detect the suspicious packet. 
+
+WAF  Web Application Firewall.
+Control packets up to the Application layer and through the HTTP connections. 
+
+FTP AND SFTP
+FTP passwords are sent in cleartext. 
+SSH for the authentication rather than the TELNET. 
+
+HTTP GET AND POST 
+Note that query strings (name/value pairs) is sent in the URL of a GET request
+Note that query strings (name/value pairs) is sent in the HTTP message body of a POST request
+
+HOW INTERNAL PT IS DONE?
+Internal PT must include, scanning, vulnerability analysis and pen testing. Based on the network testing of the application, we need to do various operations.  
+
+WEB APPLICATION PENTEST IS DONE?
+Application functionality and then the sensitive areas must be identified and the various tools and manual techniques like OWASP top 10 and SANS 25 are looked into. 
+
+HOW WILL YOU Manually FIND OUT APPLICATION VULN?
+Static analysis, data flow, source,sink,taint 
+
+SMB LOGIN METHODS
+Server Message Block is used to connect to shared file systems, printers etc. we can try to exploit it using various payloads. 
+
+METASPLOIT EXPLOITATION
+How do you do metasploit exploitation and what are the various steps. 
+PASS THE HASH is one technique by which we cca insert only the hash value and compare it rather than finding out the hash value. 
+
+YOU GET A MISSING PATCH, WHAT WILL YU DO
+Will find out the different patches and what they do, and find out the CVE and also the available exploits and try to use them. If it does not work , I will try to modify the exploit. 
+
+ESCALATING PRIVILEGES
+We can escalate privileges, getsystem and AURORA exploit. 
+
+SECURITY RISKS OF XSS, CSRF, SQL INJECTION
+Complete takeover and users downloading malware. 
+
+EMAIL PHISHING AND SPOOFING
+Steganography  and trying to load the picture and trying to have any other method by which we can install a backdoor. 
+
+hash&encrypt or Encrypt&Hash? 
+best variation is encrypt & hash but its practically difficult since IV needs to be encrypted as well then hashed. 
+easiest method is hash& encrypt but we wont get message integrity since we need to decrypt and only then we’ll know what value is present 
+
+
+native app vunerabilities 
+BO 
+SO
+HO 
+off by one exploit 
+
+If a system uses some broken hash now, how would you migrate to new hash algo? 
+you can double hash the passwords. so you first hash with broken algo and then rehash it with safe algo. 
+  [We should always maintain the salt, hashing algorithm used to hash the password for each user. By using Password Based Key Derivation Function, over time we can change the hashing algorithm say from PBKDF2withHMACSHA1 to PBKDF2withHMACSHA2. Migration can be done when a user authenticates the system with their password,  compute the new hash of password in the memory and replace the old hash. PBKDF2 also knows as key stretching algorithm which allows to increase the number of iterations over time so that we can have same implementation and defend against increasing GPU power to compute the hash.]
+how does SSH work? 
+Asymmetric, Symmetric, Hashing, DH KEy Exchange 
+https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process
+
+how does a switch work?
+http://www.webopedia.com/DidYouKnow/Hardware_Software/router_switch_hub.asp
+Hub: Within network and will only broadcast 
+Switch: Uses MAC based tables to forward packets 
+Router: Hub and Switch activities with TCP/IP routing 
+Interior gateway protocols type 1, link-state routing protocols, such as OSPF and IS-IS
+Interior gateway protocols type 2, distance-vector routing protocols, such as Routing Information Protocol, RIPv2, IGRP.
+Exterior gateway protocols are routing protocols used on the Internet for exchanging routing information between Autonomous Systems, such as Border Gateway Protocol (BGP), Path Vector Routing Protocol.
+
+
+how will you do a design review of the application? 
+https://msdn.microsoft.com/en-us/library/ff647464.aspx
+https://msdn.microsoft.com/en-us/library/ff648650.aspx 
+business case 
+users,admins and third part usage 
+input validation
+authentication 
+Authorization 
+Crypto 
+Configuration 
+sensitive data 
+Auditing and Logging 
+ 
+You have been asked to do a design review of a pay-per use SMART TV dongle. What is the criteria? 
+Data Transmission 
+Privacy Consideration 
+How should the AuthN work 
+[SmarTV Dongle have the ability to make any standard TV as SMART TV. Most of the devices are easy to setup, dongle and device from which we want to cast have to be connected to the same wifi. As we cast content like pictures, videos to tv we need to review what are the other datas [metadata] that are passed along the request. Does the dongle try to store/cache this information [user profile, user history etc] in the device. Because of usability factors, users doenst need to authenticate it. But if multiple users are using the it, does the device reveal/disclose any sensitive information to other user [Privacy]. As dongle is also connected to the wifi, it can access the internet. Does dongle send any user details/history to its cloud/remote server. is the dongle running updated software? How does it prevent itself from a internet user?  ]
+you need a centralized log system  where all the log files are sent to the system? what are your consideration? 
+Integrity Protection
+SFTP ? 
+AuthZ 
+[As it is running in a centralized system, iptables/firewall should be defined to be accessed by only known internal hosts. Every client should be authenticated and access should be restricted only to the append to the content of log file. Logfile must be password protected and encrypted incase of system compromise. Log file should be rotated regularly to avoid the excessive disk usage problem. Communication of client with central log system should be encrypted/TLS.]
+Differences between SOAP & REST 
+SOAP- XML based, heavy weight, 
+REST- light weight, JSON key value pairs. 
+
+Question: you need to create a service in AWS which is internal only. this is an internal datastore to store and retrieve credit card numbers. the storage will be in JSON data. you would hit the endpoint with the card number and retrieve the number. the database will be be NoSQL. What are the security considerations? 
+Talk about the different security requirements 
+Authentication 
+SSL Cert based AuthN 
+SSO based authentication for the GUI 
+Authorization
+within the app- Path based AuthZ 
+Database: RBAC 
+Auditing 
+logger 
+log forging 
+Input Validation 
+Restful services 
+JSON Validation  
+Crypto 
+in transit- SSL 
+At rest encryption  
+[The data store is internal only, it means it have to be separated from internet using a DMZ/firewall and when they try to access the system request for authentication. Sensitive information is stored in the service, use Encryption in rest [Encrypt with datakeys and then encrypt datakeys with envelope key (master key) and in transit using SSL. Make sure the endpoints are requested only using POST parameters. When the data is displayed in web pages, make sure it is masked. Have a proper authorization control so that user can view only their data. As it is stored in NoSQL store (procedural language), proper security in control to avoid NoSQLi (validating the input string to contain only data and not comparison operators [$gt] [$ne]). Avoid logging credit card numbers directly.]
+how does SSL mutual certification occur? 
+Client -> server 
+public and private keys on each component and how does it authenticate. 
+
+What is XXE attack? 
+Xml Entity Expansion. Can be solved by using a good parser with correct security configuration 
+
+how does at rest encryption work?
+ explain HSM and encryption with two keys 
+
+Whats the difference between java & C in terms of security?
+
+how would you prevent buffer overflows?
+
+whats ASLR?
+
+if the app will use flash for video playback, what are the security considerations? 
+
+Cross-domain Privilege Escalation
+Spoofing
+Injecting malicious files via FlashVar
+Unauthorized access to local shared storage
+Unencrypted data in transit
+CSRF
+
+Can we increase the entropy of a database holding credit card data by salting/hashing? 
+Yes, credit card is usually 16 digits. We can salt it by using padding to increase the size from 16 to a higher number to resist against rainbow table attacks. 
+
+How would you do infrastructure security? 
+Dockers, image integrity, infrastructure versioning 
+CRYPTO QUESTIONS
+Why does MAC doesn’t provide non-repudiation?
+
+MAC Vs H-MAC? Explain Length Extension Attack?
+
+Is the encryption mode “EBC” is always considered to be unsafe ?
+
+Probabilistic Vs Deterministic Encryption? 
+
+What is Related Key Attack?
+
+If private key of website is stolen, how can we protect the data sent over communication in the past from being decrypted ?
+Sunoj thinks it is by using PFS(Perfect forward secrecy)
+
+What are different methods available to evaluate a cryptographic protocol/primitive?
+
+------------------------------------------------------------------------------------------------------------------------
+
+Print all pairs with a given sum in an array of numbers.
+e.g. 
+Input:
+arr = [8, 1, 3, 4, 2, 5]
+arr_len = 6
+sum = 7
+
+found pairs = (3, 4), (2, 5)
+
+Design a messaging app like whatsapp
+Login page attacks
+Difference between static and dynamic analyzer 
+Why to use salt with hash?
+------------------------------------------------------------------------------------------------------------------------
+
+Describe OSI model
+What are Class IPs
+How to harden a server
+What are some of the web Server Vulnerabilities 
+What is routing table
+SSL certificates 
+TLS/SSL Handshake
+------------------------------------------------------------------------------------------------------------------------
+
+SQLi
+Blind SQL
+XSS, different types of XSS
+Login page attacks
+Meltdown and Spectre
+Stack overflow - DEP and ASLR
+ROP
+DDOS attacks
+------------------------------------------------------------------------------------------------------------------------
+Threat model for a cloud based app
+Python script to get users trying to traverse between different clouds
+Difference between Asymmetric and Symmetric encryption with practical example
+Difference between IPS and HIPS
+Difference between CVE and Plug ID
+------------------------------------------------------------------------------------------------------------------------
+
+Difference between static and dynamic languages
+Difference between static and dynamic data
+Difference between static and dynamic variables
+Difference between do while/while 
+Difference between if statement & ternary 
+What is a Stack 
+Difference between stack and heap?
+What is throw exception
+Polymorphism 
+Heritance 
+Difference between HTTP and HTTPS
+Asymmetric and Symmetric encryption
+SOP
+What part of URL is not  encrypted?
+CORS
+Hash & Mac
+Difference between cookie and local storage
+Difference between encoding and encryption
+2 factor auth
+Login page
+SQLi, Types - Blind and time based
+XSS, Reason for XSS - Data executed as code
+AES, CBC, ECB modes
+KPT attack, KCT attack
+SSRF
+Session management
+------------------------------------------------------------------------------------------------------------------------
+Difference between block and stream ciphers
+Difference between encryption and hashing
+Difference between TCP & UDP
+Difference between asymmetric and symmetric encryption
+SSRF
+XXE
+Latest TLS/SSL vulnerability 
+3 HTTP headers for recommendation 
+XSS through file upload
+------------------------------------------------------------------------------------------------------------------------
+CSRF
+Untrusted content  - CORS
+File upload - svg tag, html tag, meta tag
+CSP
+ ------------------------------------------------------------------------------------------------------------------------
+WannaCry
+MIRAI
+CSP
+OAuth
+Cookie length?
+Vertical privilege and Horizontal privilege escalations 
+Threat model SAAS
+JWT
+SRI
+Tokenization 
+JSONP
+SameSite prevents CSRF?
+###
+
+how does the TLS handshake work? 
+
+how exactly are the certifictes trusted
+how does mutual TLS work? 
+what is the difference between RSA and eliptic curve cryptography? 
+after generting the shared key from RSA, can i use the key directly? 
+if a database exists ,where there is the data in column1, hash of data in column2, salt per data per record is stored, is the salt column sensitive? 
+how does certificate pinning and certificate transparency? 
+what is the difference between array and linked list in terms of O notation? 
+
+
+
+
+
+
