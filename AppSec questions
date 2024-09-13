@@ -397,6 +397,46 @@ if a database exists ,where there is the data in column1, hash of data in column
 how does certificate pinning and certificate transparency? 
 what is the difference between array and linked list in terms of O notation? 
 
+confluent interview 
+
+1. Coding round 
+
+# You are tasked to download a file (JSON data) that includes user email, ip_address, and url
+# You need to find the anomaly of a user that has multiple unique ip_address values
+
+url = "https://gist.githubusercontent.com/cc1c/de6d8c12d619796b86ce02c5beb27461/raw/61b87185c52c7b19995c8c817b1f1e75946dd206/2_access_log.json"
+
+# Create Hashmap (python dictionary)
+# Open and Read file or Retrieve Data via HTTP Request (JSON data)
+# Iterate lines in file (JSON data)
+# Parse JSON to python Dict
+# Add key/value to Dict
+# Output: dict { email(string) : dict { ip_address(string) : int}}
+# Example 1: { “name@test.com”: {“1.2.3.4”: 1, “2.3.4.5”: 1}}
+# Example 2: { “name@test.com”: [“1.2.3.4”, “2.3.4.5”]}
+
+
+2. AppSec Deep Dive 
+IDOR - explain and provide examples 
+Injection - explain and provide examples  
+explain OIDC flow 
+OIDC vs Oauth 
+threats in that system 
+What is request smuggling? 
+
+
+3. Security design interview 
+Design a file storage system simolar to dropbox that would allow 
+1. sharing to users 
+2. monitoring by administrators 
+3. accessible via browsers 
+
+think about how and where you would do permission management and what the internalk subsystems would look like 
+Give an example of MTLS and how does that work 
+talk about how you would authN the user 
+talk about internal subsytems and how would you authenticate each system, the database etc 
+
+
 
 
 
