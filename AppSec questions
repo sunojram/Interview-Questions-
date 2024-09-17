@@ -415,6 +415,39 @@ url = "https://gist.githubusercontent.com/cc1c/de6d8c12d619796b86ce02c5beb27461/
 # Example 1: { “name@test.com”: {“1.2.3.4”: 1, “2.3.4.5”: 1}}
 # Example 2: { “name@test.com”: [“1.2.3.4”, “2.3.4.5”]}
 
+import requests
+
+#get response in json 
+json_response = requests.get(url=url).json()
+# print(json_response)
+
+#loop for this list of dictionaries and create a new dict with {email,[list of ips]}
+email_ip_address_dict = {}
+
+for entry in json_response:
+    email = entry['email']
+    ip_address = entry['ip_address']
+    
+    if email not in email_ip_address_dict:
+        email_ip_address_dict[email] = []
+        
+    if ip_address not in email_ip_address_dict[email]:
+        email_ip_address_dict[email].append(ip_address)
+        
+#print(email_ip_address_dict)
+
+        
+#create a new anamolous dict that identified ip's greater than 1
+anamolies = {}
+
+for emails,ips in email_ip_address_dict.items():
+    if len(ips) > 1:
+        anamolies[emails]=ips
+        
+#print anamolous email 
+for emails in anamolies.keys():
+    print("the anamolous email is",emails)
+
 
 2. AppSec Deep Dive 
 IDOR - explain and provide examples 
